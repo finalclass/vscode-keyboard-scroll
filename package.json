@@ -2,7 +2,7 @@
 	"name": "keyboard-scroll",
 	"displayName": "keyboard-scroll",
 	"description": "Scroll active editor window with a command",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"publisher": "selbh",
 	"icon": "keyboard-scroll.png",
 	"engines": {
