@@ -1,13 +1,13 @@
-# README
-## This is the README for your extension "keyboard-scroll" 
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
+keyboard-scroll
+===============
 
-* Split the editor (`Cmd+\` on OSX or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on OSX or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (OSX) to see a list of Markdown snippets
+With this plugin you can scroll the active window to show your cursor in the middle of the screen.
 
-### For more information
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+- ctrl+l - to keyboardScroll.center
 
-** Enjoy!**
+## TODO:
+
+Not implemented yet (but planned):
+
+- ctrl+alt+up - keyboardScroll.up to scroll one line up
+- ctrl+alt+down - keyboardScroll.down to scroll one line down
