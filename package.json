@@ -1,0 +1,41 @@
+{
+	"name": "keyboard-scroll",
+	"displayName": "keyboard-scroll",
+	"description": "Scroll active editor window with a command",
+	"version": "0.0.1",
+	"publisher": "selbh",
+	"icon": "keyboard-scroll.png",
+	"engines": {
+		"vscode": "^0.10.1"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:keyboardScroll.center"
+	],
+	"main": "./out/src/keyboard-scroll",
+	"contributes": {
+		"commands": [
+			{
+				"command": "keyboardScroll.center",
+				"title": "Scroll to center"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "keyboardScroll.center",
+				"key": "ctrl+l",
+				"when": "editorTextFocus"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./"
+	},
+	"devDependencies": {
+		"typescript": "^1.6.2",
+		"vscode": "0.10.x"
+	}
+}
