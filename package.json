@@ -2,29 +2,38 @@
 	"name": "keyboard-scroll",
 	"displayName": "keyboard-scroll",
 	"description": "Scroll active editor window with a command",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"publisher": "selbh",
 	"icon": "keyboard-scroll.png",
+    "homepage": "https://github.com/finalclass/vscode-keyboard-scroll",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/finalclass/vscode-keyboard-scroll.git"
+    },
+    "bugs": "https://github.com/finalclass/vscode-keyboard-scroll/issues",
 	"engines": {
 		"vscode": "^0.10.1"
 	},
 	"categories": [
 		"Other"
 	],
+    "keywords": [
+        "emacs", "shortcuts", "keybindings", "behavior"
+    ],
 	"activationEvents": [
-		"onCommand:keyboardScroll.center"
+		"onCommand:emacs.C-l"
 	],
 	"main": "./out/src/keyboard-scroll",
 	"contributes": {
 		"commands": [
 			{
-				"command": "keyboardScroll.center",
-				"title": "Scroll to center"
+				"command": "emacs.C-l",
+				"title": "Scroll to middle, top or bottom of the screen"
 			}
 		],
 		"keybindings": [
 			{
-				"command": "keyboardScroll.center",
+				"command": "emacs.C-l",
 				"key": "ctrl+l",
 				"when": "editorTextFocus"
 			}

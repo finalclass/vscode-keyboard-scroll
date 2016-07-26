@@ -1,13 +1,54 @@
-import * as vscode from 'vscode'; 
-import {TextEditorRevealType} from 'vscode';
+import * as vscode from 'vscode';
 
-export function activate(context: vscode.ExtensionContext) {
-	console.log('Congratulations, your extension "keyboard-scroll" is now active!'); 
+enum Scroll {
+	Center,
+	Top,
+	Bottom
+}
 
-	context.subscriptions.push(vscode.commands.registerCommand('keyboardScroll.center', () => {
-		vscode.window.activeTextEditor.revealRange(
-			vscode.window.activeTextEditor.selection.with(),
-			TextEditorRevealType.InCenter
-		);
-	}));
+var scrollPosition: Scroll = Scroll.Center; 
+export function activate(context: vscode.ExtensionContext): void {
+	vscode.window.onDidChangeTextEditorSelection(() => {
+		scrollPosition = Scroll.Center;
+	});
+	context.subscriptions.push(vscode.commands.registerCommand(
+		'emacs.C-l', () => {
+			if (scrollPosition === Scroll.Center) {
+				vscode.window.activeTextEditor.revealRange(
+					vscode.window.activeTextEditor.selection,
+					vscode.TextEditorRevealType.InCenter
+				);
+				scrollPosition = Scroll.Top;
+			} else if (scrollPosition === Scroll.Top) {
+				let promises = [
+					vscode.commands.executeCommand("scrollPageDown"),
+					vscode.commands.executeCommand("scrollPageDown")
+				];
+				
+				Promise.all(promises).then(() => {
+					vscode.window.activeTextEditor.revealRange(
+						vscode.window.activeTextEditor.selection,
+						vscode.TextEditorRevealType.Default
+					);
+					scrollPosition = Scroll.Bottom;
+				});
+			} else if (scrollPosition === Scroll.Bottom) {
+				let promises = [
+					vscode.commands.executeCommand("scrollPageUp"),
+					vscode.commands.executeCommand("scrollPageUp")
+				];
+				
+				Promise.all(promises).then(() => {
+					vscode.window.activeTextEditor.revealRange(
+						vscode.window.activeTextEditor.selection,
+						vscode.TextEditorRevealType.Default
+					);
+					scrollPosition = Scroll.Center;
+				});
+			}
+		})
+	);
+}
+
+export function deactivate(): void {
 }
