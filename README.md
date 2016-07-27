@@ -1,13 +1,18 @@
 keyboard-scroll
 ===============
+Scroll the active window to show your cursor in the middle, top or bottom of the screen.
+Same sequence as emacs `C-l`.
 
-With this plugin you can scroll the active window to show your cursor in the middle of the screen.
+| Key | Description |
+|---|---|
+| `ctrl+l` | Scroll screen to middle or top or bottom |
 
-- ctrl+l - to keyboardScroll.center
+### Tips:
+Visual Studio Code default keybindings about screen scroll:
 
-## TODO:
-
-Not implemented yet (but planned):
-
-- ctrl+alt+up - keyboardScroll.up to scroll one line up
-- ctrl+alt+down - keyboardScroll.down to scroll one line down
+| Key | Description |
+|---|---|
+| `ctrl+up` | Scroll screen one line up |
+| `ctrl+down` | Scroll screen one line down |
+| `alt+pageup` | Scroll screen one page up |
+| `alt+pagedown` | Scroll screen one page down |
