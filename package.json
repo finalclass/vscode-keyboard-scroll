@@ -1,50 +1,53 @@
 {
-	"name": "keyboard-scroll",
-	"displayName": "keyboard-scroll",
-	"description": "Scroll active editor window with a command",
-	"version": "0.0.3",
-	"publisher": "selbh",
-	"icon": "keyboard-scroll.png",
+    "name": "keyboard-scroll",
+    "displayName": "keyboard-scroll",
+    "description": "Scroll active editor window with a command",
+    "version": "0.1.0",
+    "publisher": "selbh",
+    "icon": "keyboard-scroll.png",
     "homepage": "https://github.com/finalclass/vscode-keyboard-scroll",
     "repository": {
         "type": "git",
         "url": "https://github.com/finalclass/vscode-keyboard-scroll.git"
     },
     "bugs": "https://github.com/finalclass/vscode-keyboard-scroll/issues",
-	"engines": {
-		"vscode": "^0.10.1"
-	},
-	"categories": [
-		"Other"
-	],
-    "keywords": [
-        "emacs", "shortcuts", "keybindings", "behavior"
+    "engines": {
+        "vscode": "^0.10.1"
+    },
+    "categories": [
+        "Other"
     ],
-	"activationEvents": [
-		"onCommand:emacs.C-l"
-	],
-	"main": "./out/src/keyboard-scroll",
-	"contributes": {
-		"commands": [
-			{
-				"command": "emacs.C-l",
-				"title": "Scroll to middle, top or bottom of the screen"
-			}
-		],
-		"keybindings": [
-			{
-				"command": "emacs.C-l",
-				"key": "ctrl+l",
-				"when": "editorTextFocus"
-			}
-		]
-	},
-	"scripts": {
-		"vscode:prepublish": "node ./node_modules/vscode/bin/compile",
-		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./"
-	},
-	"devDependencies": {
-		"typescript": "^1.6.2",
-		"vscode": "0.10.x"
-	}
+    "keywords": [
+        "emacs",
+        "shortcuts",
+        "keybindings",
+        "behavior"
+    ],
+    "activationEvents": [
+        "onCommand:emacs.C-l"
+    ],
+    "main": "./out/src/keyboard-scroll",
+    "contributes": {
+        "commands": [
+            {
+                "command": "emacs.C-l",
+                "title": "Scroll to middle, top or bottom of the screen"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "emacs.C-l",
+                "key": "ctrl+l",
+                "when": "editorTextFocus"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+        "compile": "node ./node_modules/vscode/bin/compile -watch -p ./"
+    },
+    "devDependencies": {
+        "typescript": "^1.6.2",
+        "vscode": "0.10.x"
+    }
 }
